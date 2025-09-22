@@ -158,7 +158,7 @@ const LeadForm = ({ onClose }: LeadFormProps) => {
     }
 
     try {
-      const response = await fetch("https://script.google.com/macros/s/AKfycbw3d51ejnVuEJgQNpaCZZzbTbUO08WLnwnbBk8uwSqH79PwmQKOzoUZ6SP5ioCIbo5Evw/exec", {
+      const response = await fetch("https://script.google.com/macros/s/AKfycbzrxtJrTaqVcJyeEj-PPkOidde4viIehi6fNo3hZS9Xsa9sYIHeGMbyGU4If96nE2XhCQ/exec", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
