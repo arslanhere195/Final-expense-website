@@ -111,17 +111,41 @@ const LeadForm = ({ onClose }: LeadFormProps) => {
     }
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  // const handleSubmit = (e: React.FormEvent) => {
+  //   e.preventDefault();
+  //   console.log('Form submission attempted at step:', currentStep);
+
+  //   // Only submit if we're on step 4 and user clicked submit
+  //   if (currentStep !== 4) {
+  //     console.log('Not on step 4, preventing submission');
+  //     return;
+  //   }
+
+  //   // Validate all required steps
+  //   for (let step = 1; step < 5; step++) {
+  //     if (!validateStep(step)) {
+  //       toast({
+  //         title: "Please complete all required fields",
+  //         description: "Please go back and fill in all required information.",
+  //         variant: "destructive"
+  //       });
+  //       return;
+  //     }
+  //   }
+
+  //   console.log('Form submitted:', formData);
+  //   toast({
+  //     title: "Application Submitted!",
+  //     description: "Thank you for your interest. A representative will contact you within 24 hours.",
+  //   });
+  //   onClose();
+  // };
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Form submission attempted at step:', currentStep);
 
-    // Only submit if we're on step 4 and user clicked submit
-    if (currentStep !== 4) {
-      console.log('Not on step 4, preventing submission');
-      return;
-    }
+    if (currentStep !== 4) return;
 
-    // Validate all required steps
     for (let step = 1; step < 5; step++) {
       if (!validateStep(step)) {
         toast({
@@ -133,12 +157,38 @@ const LeadForm = ({ onClose }: LeadFormProps) => {
       }
     }
 
-    console.log('Form submitted:', formData);
-    toast({
-      title: "Application Submitted!",
-      description: "Thank you for your interest. A representative will contact you within 24 hours.",
-    });
-    onClose();
+    try {
+      const response = await fetch("https://script.google.com/macros/s/AKfycbw3d51ejnVuEJgQNpaCZZzbTbUO08WLnwnbBk8uwSqH79PwmQKOzoUZ6SP5ioCIbo5Evw/exec", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+        mode: "no-cors"
+      });
+
+      console.log('resposne', response)
+      if (response.ok) {
+        toast({
+          title: "Application Submitted!",
+          description: "Thank you for your interest. A representative will contact you within 24 hours.",
+        });
+        onClose();
+      } else {
+        toast({
+          title: "Submission Failed",
+          description: "There was a problem saving your application. Please try again.",
+          variant: "destructive"
+        });
+      }
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      toast({
+        title: "Submission Error",
+        description: "Could not connect to server.",
+        variant: "destructive"
+      });
+    }
   };
 
   const renderStep1 = () => (
