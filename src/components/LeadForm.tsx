@@ -164,7 +164,7 @@ const LeadForm = ({ onClose }: LeadFormProps) => {
           "Content-Type": "application/json",
         },
         body: JSON.stringify(formData),
-        mode: "no-cors"
+        // mode: "no-cors"
       });
 
       console.log('resposne', response)
