@@ -51,7 +51,7 @@ const Index = () => {
           <div className="flex justify-between items-center">
             <div className="flex items-center space-x-2">
               <Shield className="h-8 w-8 text-blue-600" />
-              <span className="text-2xl font-bold text-gray-900">Fenural</span>
+              <span className="text-2xl font-bold text-gray-900">Funeral</span>
             </div>
             <Badge variant="secondary" className="bg-green-100 text-green-800">
               Licensed & Trusted
@@ -69,20 +69,20 @@ const Index = () => {
               <span className="text-blue-600 block">Financial Future</span>
             </h1>
             <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
-              Get instant coverage with Fenural's final expense insurance. 
+              Get instant coverage with Funeral's final expense insurance.
               No medical exam required, affordable premiums, and guaranteed acceptance.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button 
-                size="lg" 
+              <Button
+                size="lg"
                 className="bg-blue-600 hover:bg-blue-700 text-lg px-8 py-4"
                 onClick={() => setShowForm(true)}
               >
                 Get Free Quote Now
               </Button>
-              <Button 
-                size="lg" 
-                variant="outline" 
+              <Button
+                size="lg"
+                variant="outline"
                 className="text-lg px-8 py-4"
               >
                 Learn More
@@ -113,7 +113,7 @@ const Index = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Why Choose Fenural?
+              Why Choose Funeral?
             </h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
               We make final expense insurance simple, affordable, and accessible for everyone.
@@ -160,8 +160,8 @@ const Index = () => {
           <p className="text-xl mb-8 opacity-90">
             Get your free quote in just 2 minutes. No obligations, no hidden fees.
           </p>
-          <Button 
-            size="lg" 
+          <Button
+            size="lg"
             className="bg-white text-blue-600 hover:bg-gray-100 text-lg px-8 py-4"
             onClick={() => setShowForm(true)}
           >
@@ -177,7 +177,7 @@ const Index = () => {
             <div className="md:col-span-2">
               <div className="flex items-center space-x-2 mb-4">
                 <Shield className="h-6 w-6" />
-                <span className="text-xl font-bold">Fenural</span>
+                <span className="text-xl font-bold">Funeral</span>
               </div>
               <p className="text-gray-400 mb-4">
                 Providing affordable final expense insurance to protect families across America.
@@ -195,14 +195,16 @@ const Index = () => {
             <div>
               <h4 className="font-semibold mb-4">Contact</h4>
               <ul className="space-y-2 text-gray-400">
-                <li>1-800-FENURAL</li>
-                <li>support@fenural.com</li>
+                <li>2143899640</li>
+                <li>Mavericks Insurance Network
+                  9750 Ormsby Station Road
+                  Louisville, KY 40223</li>
                 <li>Available 24/7</li>
               </ul>
             </div>
           </div>
           <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-            <p>&copy; 2024 Fenural. All rights reserved. Licensed in all 50 states.</p>
+            <p>&copy; 2025 Funeral. All rights reserved. Licensed in all 50 states.</p>
           </div>
         </div>
       </footer>
